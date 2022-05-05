@@ -14,6 +14,7 @@
     <div class="channel-con">
       <van-tabs
         v-model="channelId"
+        @change="channelChangeFn"
         swipeable
         animated
         sticky
@@ -23,6 +24,7 @@
           v-for="item in userChannelList"
           :key="item.id"
           :title="item.name"
+          :name="item.id"
         >
           <article-list :channelId="channelId"></article-list>
         </van-tab>
@@ -71,9 +73,7 @@ export default {
     unCheckChannelList () {
       return this.allChannelList.filter(
         (bigObj) =>
-          this.userChannelList.findIndex(
-            (smallObj) => smallObj.id === bigObj.id
-          ) === -1
+          this.userChannelList.findIndex((smallObj) => smallObj.id === bigObj.id) === -1
       )
     }
   },
@@ -139,7 +139,21 @@ export default {
       // 我要让内部的编辑状态回归false
       this.$refs.editRef.isEdit = false
     }
+  },
+  // 只有使用keep-alive的组件才有这2个生命周期
+  activated () { // 切回来
+    console.log(this.$route)
+    window.addEventListener('scroll', this.scrollFn)
+    // window和document, 监听网页滚动的事件
+    // html标签获取scrollTop, 滚动的距离, 和设置滚动的位置
+    // 立刻设置, 滚动条位置
+    document.documentElement.scrollTop = this.$route.meta.scrollT
+    document.body.scrollTop = this.$route.meta.scrollT
+  },
+  deactivated () { // 切走
+    window.removeEventListener('scroll', this.scrollFn)
   }
+  // 先切走了, 滚动条回到顶部, 才触发deactivated失焦, 所以拿不到滚动位置了
 }
 </script>
 
@@ -147,11 +161,16 @@ export default {
 .channel-con{
   padding-top: 45px;
 }
+/* // 设置 tabs 容器的样式 */
+::v-deep .van-tabs__wrap {
+  padding-right: 45px;
+  background-color: #fff;
+}
 .morechannel {
   position: fixed;
   top: 46px;
-  right: 0px;
-  z-index: 999;
+  right: 8px;
+  z-index: 99;
   width: 45px;
   height: 43.98px;
   line-height: 44px;

@@ -30,6 +30,15 @@ const routes = [
         component: User
       }
     ]
+  },
+  // 用户编辑页面
+  {
+    path: '/user_info',
+    component: () => import(/* webpackChunkName: "userInfo" */ '@/views/user/userInfo')
+  },
+  { // 文章详情页
+    path: '/detail',
+    component: () => import(/* webpackChunkName: "Detail" */ '@/views/articledetail')
   }
 ]
 

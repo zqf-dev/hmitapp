@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'amfe-flexible'
-import { Lazyload, Tabbar, TabbarItem, NavBar, Tab, Tabs, Icon, Loading, Popup, PullRefresh, List, Row, Col, ActionSheet, Cell, Badge } from 'vant'
+import { Lazyload, Tabbar, TabbarItem, NavBar, Tab, Tabs, Icon, Loading, Popup, PullRefresh, List, Row, Col, ActionSheet, Cell, Badge, CellGroup, Tag, Image as VanImage, Dialog, Field, DatetimePicker, Toast, Button, Divider } from 'vant'
 
 Vue.use(Lazyload, {
   preLoad: 0.8, // 屏幕高度的范围百分比0-1, 预加载范围
@@ -24,6 +24,15 @@ Vue.use(Col)
 Vue.use(ActionSheet)
 Vue.use(Cell)
 Vue.use(Badge)
+Vue.use(CellGroup)
+Vue.use(Tag)
+Vue.use(VanImage)
+Vue.use(Dialog)
+Vue.use(Field)
+Vue.use(DatetimePicker)
+Vue.use(Toast)
+Vue.use(Button)
+Vue.use(Divider)
 Vue.config.productionTip = false
 
 new Vue({

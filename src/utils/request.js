@@ -5,7 +5,8 @@ import { getToken, removeToken } from '@/utils/token'
 import router from '@/router'
 
 const mAxios = axios.create({
-  baseURL: 'http://toutiao.itheima.net',
+  // baseURL: 'http://toutiao.itheima.net',
+  baseURL: 'http://geek.itheima.net/',
   timeout: 10000
 })
 
@@ -28,6 +29,8 @@ mAxios.interceptors.request.use(function (config) {
 
 // 响应拦截器
 mAxios.interceptors.response.use(response => {
+  // console.log('response--', response)
+  if (response.status === 204) return response
   const res = response.data
   if (res.message !== 'OK') {
     Toast({
@@ -56,7 +59,7 @@ error => {
       Toast({
         message: errorRes.data.message,
         type: 'fail',
-        duration: 3 * 1000
+        duration: 2 * 1000
       })
     }
     return Promise.reject(error)

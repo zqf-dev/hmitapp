@@ -15,7 +15,7 @@
           :rules="[{ required: true, message: '请填写手机号' }]"
         >
         </Field>
-        <van-field
+        <Field
           v-model="user.code"
           type="password"
           name="code"

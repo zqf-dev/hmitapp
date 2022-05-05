@@ -40,3 +40,26 @@ export function getAllArticleList ({ channelId, timestamp }) {
     }
   })
 }
+
+export function articledetail ({ artId }) {
+  return request({
+    url: APICONFIG.home.articleDetailApi + `/${artId}`
+  })
+}
+
+export function userUnFollowed ({ target }) {
+  return request({
+    url: APICONFIG.home.userUnFollowedApi + `/${target}`,
+    method: 'DELETE'
+  })
+}
+
+export function userFollowed ({ target }) {
+  return request({
+    url: APICONFIG.home.userFollowedApi,
+    method: 'POST',
+    data: {
+      target: target
+    }
+  })
+}

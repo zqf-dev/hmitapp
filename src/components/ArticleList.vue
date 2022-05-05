@@ -87,7 +87,12 @@ export default {
     },
     // 文章单元格-点击事件
     itemClickFn (id) {
-      console.log('aaaa')
+      this.$router.push({
+        path: '/detail',
+        query: {
+          art_id: id
+        }
+      })
     }
   }
 }
