@@ -47,6 +47,7 @@ import { Dialog } from 'vant'
 import { removeToken } from '@/utils/token.js'
 import { mapMutations } from 'vuex'
 export default {
+  name: 'user',
   data () {
     return {
       userObj: {} // 用户对象

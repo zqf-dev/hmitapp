@@ -92,6 +92,7 @@
 import { articledetail, userFollowed, userUnFollowed } from '@/api/home'
 import { timeAgo } from '@/utils/date.js'
 export default {
+  name: 'detail',
   data () {
     return {
       artObj: {},

@@ -77,6 +77,7 @@ import { mapMutations } from 'vuex'
 import { Toast } from 'vant'
 import { formatDate } from '@/utils/date.js'
 export default {
+  name: 'userInfo',
   data () {
     return {
       userProObj: {},
