@@ -35,7 +35,7 @@
     <!-- 操作面板 -->
     <van-cell-group class="action-card">
       <van-cell icon="edit" title="编辑资料" is-link to="/user_info"/>
-      <van-cell icon="chat-o" title="客服机器人" is-link to="/chat"/>
+      <van-cell icon="chat-o" title="联系客服" is-link to="/chat"/>
       <van-cell icon="warning-o" title="退出登录" is-link @click="quitFn"/>
     </van-cell-group>
   </div>
