@@ -2,7 +2,7 @@
   <div>
     <!-- 二级路由页面 -->
     <div class="home_container">
-      <keep-alive>
+      <keep-alive exclude="User">
         <router-view></router-view>
       </keep-alive>
     </div>

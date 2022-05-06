@@ -9,7 +9,7 @@
           <img :src="$store.state.userPhoto" alt="" class="avatar">
         </template>
         <template #title>
-          <span class="username">{{ userObj.name }}</span>
+          <span class="username">{{ $store.state.nickName }}</span>
         </template>
         <template #label>
           <van-tag color="#fff" text-color="#007bff">申请认证</van-tag>
@@ -47,20 +47,20 @@ import { Dialog } from 'vant'
 import { removeToken } from '@/utils/token.js'
 import { mapMutations } from 'vuex'
 export default {
-  name: 'user',
+  name: 'User',
   data () {
     return {
-      userObj: {} // 用户对象
+      userObj: {}
     }
   },
   async created () {
     const res = await getUserInfo()
     this.userObj = res
-    // this.$store.commit('SET_USERPHOTO', this.userObj.photo)
     this.SET_USERPHOTO(res.photo)
+    this.SET_NICKNAME(res.name)
   },
   methods: {
-    ...mapMutations(['SET_USERPHOTO']),
+    ...mapMutations(['SET_USERPHOTO', 'SET_NICKNAME']),
     // 退出方法
     quitFn () {
       Dialog.confirm({

@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    userPhoto: ''
+    userPhoto: '',
+    nickName: ''
   },
   getters: {
   },
@@ -13,6 +14,9 @@ export default new Vuex.Store({
     // 编码风格, mutations最好大写(区分)
     SET_USERPHOTO (state, value) {
       state.userPhoto = value
+    },
+    SET_NICKNAME (state, value) {
+      state.nickName = value
     }
   },
   actions: {

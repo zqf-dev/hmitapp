@@ -77,7 +77,7 @@ import { mapMutations } from 'vuex'
 import { Toast } from 'vant'
 import { formatDate } from '@/utils/date.js'
 export default {
-  name: 'userInfo',
+  name: 'UserInfo',
   data () {
     return {
       userProObj: {},
@@ -94,7 +94,7 @@ export default {
     this.userProObj = res
   },
   methods: {
-    ...mapMutations(['SET_USERPHOTO']),
+    ...mapMutations(['SET_USERPHOTO', 'SET_NICKNAME']),
     // 点击头像的时候
     changeAvatar () {
       this.$refs.iptFile.click() // JS模拟标签的事件触发, 为了让input[file]文件选择窗口出现
@@ -125,6 +125,7 @@ export default {
       if (res === null) {
         Toast.success('修改成功')
         this.userProObj.name = this.inputUserName
+        this.SET_NICKNAME(this.inputUserName)
       }
     },
     // 生日时间选择
