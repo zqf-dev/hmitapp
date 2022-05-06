@@ -133,6 +133,7 @@ export default {
       this.currentDate = new Date(this.userProObj.birthday)
       this.dateTimePickerShow = true
     },
+    // 确定时间选择
     dateCancelFn () {
       this.dateTimePickerShow = false
     },
