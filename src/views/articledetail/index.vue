@@ -83,6 +83,7 @@
           >点赞</van-button>
         </div>
         <!-- 文章评论部分 -->
+        <comment-list></comment-list>
       </div>
     </div>
   </div>
@@ -91,7 +92,9 @@
 <script>
 import { articledetail, userFollowed, userUnFollowed } from '@/api/home'
 import { timeAgo } from '@/utils/date.js'
+import CommentList from '@/components/CommentList.vue'
 export default {
+  components: { CommentList },
   name: 'Detail',
   data () {
     return {
