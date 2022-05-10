@@ -1,5 +1,5 @@
-# hmitapp
-😄Vue移动端项目
+# Hmitapp
+😄Vue移动端项目，最佳实战入门项目
   使用的框架：vue2 + vue-router + vant2 + axios + vuex + amfe-flexible
 
 ## 项目设置
