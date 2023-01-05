@@ -31,7 +31,7 @@
             native-type="submit"
             :disabled="isLoading"
             :loading="isLoading"
-            loading-text="正在登录中..."
+            loading-text="正在登录中"
           >提交</Button>
         </div>
       </Form>
