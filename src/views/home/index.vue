@@ -154,11 +154,12 @@ export default {
     window.removeEventListener('scroll', this.scrollFn)
   }
   // 先切走了, 滚动条回到顶部, 才触发deactivated失焦, 所以拿不到滚动位置了
+  // 测试
 }
 </script>
 
 <style scoped lang="less">
-.channel-con {
+.channel-con{
   padding-top: 45px;
 }
 /* // 设置 tabs 容器的样式 */

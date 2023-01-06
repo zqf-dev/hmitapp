@@ -1,33 +1,24 @@
-# Hmitapp
-😄Vue移动端项目，最佳实战入门项目
+# hmitapp
 
-使用的框架：vue2 + vue-router + vant2 + axios + vuex + amfe-flexible
-
-## 项目设置
-### 拉取资源包
-
-```javascript
+## Project setup
+```
 yarn install
 ```
 
-### 启动项目（默认development环境）
-
-```javascript
+### Compiles and hot-reloads for development
+```
 yarn start
 ```
 
-### 项目打包production
-
-```javascript
+### Compiles and minifies for production
+```
 yarn build
 ```
 
-### esLints and fixes 文件
-
-```javascript
+### Lints and fixes files
+```
 yarn lint
 ```
 
-### 自定义配置
-
+### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
